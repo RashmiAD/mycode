@@ -4,12 +4,12 @@ public:
         set<int> s;
         int count = 0;
         
-        for(int num : arr)
-            s.insert(num);
+        for(auto &&num : arr)
+            s.insert(move(num));
         
-        for(int num : arr)
+        for(auto &&num : arr)
         {
-            if(s.find(num + 1) != s.end())
+            if(s.find(move(num) + 1) != s.end())
                 count++;
         }
         
